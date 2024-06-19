@@ -31,6 +31,11 @@ public class UtilisateurRessource {
         return new ResponseEntity(service.getListeUtilisateurs(), HttpStatusCode.valueOf(200));
     }
 
+    @GetMapping("/getCompteur")
+    public ResponseEntity getCompteur(){
+        return new ResponseEntity(service.getCompteur(), HttpStatusCode.valueOf(200));
+    }
+
 
 
     @PostMapping ("/create")

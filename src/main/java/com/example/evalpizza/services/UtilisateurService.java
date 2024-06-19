@@ -3,6 +3,7 @@ package com.example.evalpizza.services;
 import com.example.evalpizza.dtos.InUtilisateurDto;
 import com.example.evalpizza.dtos.OutUtilisateurDto;
 import com.example.evalpizza.entities.UtilisateurEntity;
+import com.example.evalpizza.enumerations.TypeEnum;
 import com.example.evalpizza.repositories.IUtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,6 +57,15 @@ public class UtilisateurService {
         }
         //Meriterait une meilleur gestion des erreurs. Pas le temps
         return null;
+    }
+
+    public String getCompteur(){
+        List<UtilisateurEntity> listEntity = repository.findAll();
+        long compteurVelo = listEntity.stream().filter(it -> it.getType() == TypeEnum.VELO).count();
+        long compteurMoto = listEntity.stream().filter(it -> it.getType() == TypeEnum.MOTO).count();
+        long compteurClient = listEntity.stream().filter(it -> it.getType() == TypeEnum.CLIENT).count();
+        String valeurRetour = String.format("Clients : %s, Motos : %s, Velo : %s", compteurClient, compteurMoto, compteurVelo);
+        return valeurRetour;
     }
 
     public void delete (Integer id){
