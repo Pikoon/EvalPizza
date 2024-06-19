@@ -1,9 +1,12 @@
 package com.example.evalpizza.dtos;
 
+import com.example.evalpizza.enumerations.TypeEnum;
+
 import java.time.LocalDate;
 
 public class OutUtilisateurDto {
-    private String nom, prenom, type;
+    private String nom, prenom;
+    private String type;
 
     private LocalDate dateNaissance, dateInscription;
 

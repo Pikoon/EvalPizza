@@ -31,6 +31,8 @@ public class UtilisateurRessource {
         return new ResponseEntity(service.getListeUtilisateurs(), HttpStatusCode.valueOf(200));
     }
 
+
+
     @PostMapping ("/create")
     public ResponseEntity creer (@RequestBody InUtilisateurDto in){
         service.ajoutUtilisateur(in);

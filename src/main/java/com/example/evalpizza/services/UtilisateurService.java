@@ -23,7 +23,7 @@ public class UtilisateurService {
         dto.setPrenom(entity.getPrenom());
         dto.setDateNaissance(entity.getDateNaissance());
         dto.setDateInscription(entity.getDateInscription());
-        dto.setType(entity.getType());
+        dto.setType(entity.getType().toString());
 
         return dto;
     }
@@ -44,9 +44,11 @@ public class UtilisateurService {
     }
 
     public List<OutUtilisateurDto> getListeUtilisateurs(){
+
         ArrayList<OutUtilisateurDto> listUtilisateurs = new ArrayList<>();
         List<UtilisateurEntity> listEntity = repository.findAll();
         if (listEntity != null){
+
             listEntity.forEach(entity -> {
                 listUtilisateurs.add(toDto(entity));
             });

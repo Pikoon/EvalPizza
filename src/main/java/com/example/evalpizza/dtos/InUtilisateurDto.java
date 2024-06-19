@@ -1,12 +1,15 @@
 package com.example.evalpizza.dtos;
 
 
+import com.example.evalpizza.enumerations.TypeEnum;
+
 import java.time.LocalDate;
 
 //Peut etre a supprimer
 public class InUtilisateurDto {
 
-    private String nom, prenom, type;
+    private String nom, prenom;
+    private TypeEnum type;
 
     private LocalDate date_inscription, date_naissance;
 
@@ -26,11 +29,11 @@ public class InUtilisateurDto {
         this.prenom = prenom;
     }
 
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

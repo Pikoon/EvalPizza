@@ -1,5 +1,6 @@
 package com.example.evalpizza.entities;
 
+import com.example.evalpizza.enumerations.TypeEnum;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -24,7 +25,8 @@ public class UtilisateurEntity {
     private LocalDate dateInscription;
 
     @Column(name = "type")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeEnum type;
 
     public Integer getId() {
         return id;
@@ -66,11 +68,12 @@ public class UtilisateurEntity {
         this.dateInscription = dateInscription;
     }
 
-    public String getType() {
+
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 }
