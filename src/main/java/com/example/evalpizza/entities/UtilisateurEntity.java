@@ -12,6 +12,10 @@ public class UtilisateurEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    public Integer getId() {
+        return id;
+    }
+
     @Column(name = "nom")
     private String nom;
 

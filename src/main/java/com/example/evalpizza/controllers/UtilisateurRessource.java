@@ -68,4 +68,9 @@ public class UtilisateurRessource {
         service.delete(idInt);
         return new ResponseEntity("C'est supprimé", HttpStatusCode.valueOf(200));
     }
+
+    @GetMapping("/top3")
+    public ResponseEntity getTop3(){
+        return new ResponseEntity(serviceLivraison.getMeilleursLivreurs(), HttpStatusCode.valueOf(200) );
+    }
 }
