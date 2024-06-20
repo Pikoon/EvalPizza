@@ -58,7 +58,6 @@ public class LivraisonService {
         return top3;
     }
 
-
     public OutSyntheseClient getSynthese (Integer id){
         List<LivraisonEntity> listLivraison = repositoryLivraison.findAll();
         ArrayList<CommandeEntity> listCommandesConcernees = new ArrayList<>();
