@@ -53,5 +53,4 @@ public class CommandeEntity {
         this.prixTotal = prixTotal;
     }
 
-
 }
